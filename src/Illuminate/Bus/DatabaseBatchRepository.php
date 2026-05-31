@@ -351,7 +351,7 @@ class DatabaseBatchRepository implements PrunableBatchRepository
         }
 
         try {
-            return unserialize($serialized);
+            return unserialize($serialized, ['allowed_classes' => false]);
         } catch (Throwable) {
             return [];
         }
